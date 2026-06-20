@@ -1,0 +1,8 @@
+D:\Dotnet-Project\InventoryManagementAPI\InventoryManagementAPI\obj\Debug\net10.0\InventoryManagementAPI.csproj.AssemblyReference.cache
+D:\Dotnet-Project\InventoryManagementAPI\InventoryManagementAPI\obj\Debug\net10.0\rpswa.dswa.cache.json
+D:\Dotnet-Project\InventoryManagementAPI\InventoryManagementAPI\obj\Debug\net10.0\InventoryManagementAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dotnet-Project\InventoryManagementAPI\InventoryManagementAPI\obj\Debug\net10.0\InventoryManagementAPI.AssemblyInfoInputs.cache
+D:\Dotnet-Project\InventoryManagementAPI\InventoryManagementAPI\obj\Debug\net10.0\InventoryManagementAPI.AssemblyInfo.cs
+D:\Dotnet-Project\InventoryManagementAPI\InventoryManagementAPI\obj\Debug\net10.0\InventoryManagementAPI.csproj.CoreCompileInputs.cache
+D:\Dotnet-Project\InventoryManagementAPI\InventoryManagementAPI\obj\Debug\net10.0\InventoryManagementAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Dotnet-Project\InventoryManagementAPI\InventoryManagementAPI\obj\Debug\net10.0\InventoryManagementAPI.MvcApplicationPartsAssemblyInfo.cache
