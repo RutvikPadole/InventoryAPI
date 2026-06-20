@@ -94,7 +94,7 @@ app.UseCors("AllowAll");
 
 app.UseHttpsRedirection();
 
-app.UseCors("AllowAll");
+
 
 
 

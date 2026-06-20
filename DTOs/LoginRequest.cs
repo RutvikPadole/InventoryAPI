@@ -1,4 +1,4 @@
-﻿namespace InventoryManagementAPI.Model
+﻿namespace InventoryManagementAPI.DTOs
 {
     public class LoginRequest
     {

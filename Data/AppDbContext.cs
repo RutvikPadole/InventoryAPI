@@ -17,7 +17,7 @@ namespace InventoryManagementAPI.Data
         {
             modelBuilder.Entity<Product>()
                 .Property(p => p.Price)
-                .HasPrecision(18, 2); // important fix
+                .HasPrecision(18, 2); 
 
             base.OnModelCreating(modelBuilder);
         }

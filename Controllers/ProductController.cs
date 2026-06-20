@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 namespace InventoryManagementAPI.Controllers
 {
     [ApiController]
-    [Authorize(Roles ="Admin")]
+    //[Authorize(Roles ="Admin")]
     [Route("api/[controller]")]
 
     public class ProductController : BaseController
@@ -82,7 +82,7 @@ namespace InventoryManagementAPI.Controllers
             return SuccessResponse(result, "Product updated successfully");
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

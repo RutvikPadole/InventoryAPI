@@ -1,11 +1,11 @@
 ﻿using InventoryManagementAPI.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using InventoryManagementAPI.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using InventoryManagementAPI.DTOs;
 
 
 [ApiController]
@@ -22,6 +22,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("login")]
+
     public IActionResult Login(LoginRequest request)
     {
         var user = _context.Users
