@@ -95,7 +95,7 @@ app.UseHttpsRedirection();
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 
-//app.MapOpenApi();
+
 
 app.UseMiddleware<RequestLoggingMiddleware>();
 
