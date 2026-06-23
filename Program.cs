@@ -42,7 +42,7 @@ builder.Services.AddAuthentication(options =>
         };
     });
 
-// Add services to the container.
+
 
 builder.Services.AddControllers();
 
@@ -52,8 +52,7 @@ builder.Services.AddValidatorsFromAssemblyContaining<ProductValidator>();
 
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddSwaggerGen(); 
-
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -82,7 +81,6 @@ app.UseSwaggerUI(c =>
 });
 
 
-
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -94,13 +92,11 @@ app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 
 
-
-
-
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 
 //app.MapOpenApi();
+
 app.UseMiddleware<RequestLoggingMiddleware>();
 
 app.UseMiddleware<ExceptionMiddleware>();
@@ -114,9 +110,6 @@ app.UseSwagger();
 app.UseSwaggerUI();
             
 app.MapControllers();
-
-
-
 
 app.Run();
 
