@@ -6,6 +6,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using InventoryManagementAPI.DTOs;
+using InventoryManagementAPI.Model;
+using Microsoft.Identity.Client;
+using BCrypt.Net;
 
 
 [ApiController]
@@ -56,5 +59,35 @@ public class AuthController : ControllerBase
         var jwt = new JwtSecurityTokenHandler().WriteToken(token);
 
         return Ok(new { token = jwt });
+    }
+
+
+    [HttpPost ("register")]
+    public IActionResult Register(RegisterRequest request)
+    {
+        var user = _context.Users
+            .FirstOrDefault(x => x.Username == request.Username);
+
+        if(user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.Password))
+        {
+
+            return Unauthorized("Invalid credentials");
+        }
+
+        // this is hash password 
+
+        var hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
+
+        var User = new User
+        {
+            Username = request.Username,
+            Password = hashedPassword,
+            Role = request.Role
+        };
+
+        _context.Users.Add(user);
+        _context.SaveChanges();
+
+        return Ok("User register successfully");
     }
 }
