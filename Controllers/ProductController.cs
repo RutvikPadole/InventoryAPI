@@ -113,6 +113,25 @@ namespace InventoryManagementAPI.Controllers
 
             return SuccessResponse(result, "Product fetched successfully");
         }
+
+        [Authorize]
+        [HttpGet("Profile")]
+        
+        public IActionResult GetProfile()
+        {
+            return Ok("This is protected API");
+        }
+
+
+        [Authorize(Roles ="Admin")]
+
+        [HttpGet("Admin")]
+
+        public IActionResult AdminData()
+        {
+            return Ok("Only Admin can access");
+        }
+
     }
 }
 
