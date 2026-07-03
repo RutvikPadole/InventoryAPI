@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 namespace InventoryManagementAPI.Controllers
 {
     [ApiController]
-    //[Authorize(Roles ="Admin")]
     [Route("api/[controller]")]
+    [Authorize]
 
     public class ProductController : BaseController
 
@@ -25,11 +25,11 @@ namespace InventoryManagementAPI.Controllers
             _mapper = mapper;
             _logger = logger;
 
-            _logger.LogInformation("Fetching all products");
-            _logger.LogInformation("Adding new products");
+           
+            _logger.LogInformation("Product added");
         }
 
-
+        [Authorize]
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -40,9 +40,9 @@ namespace InventoryManagementAPI.Controllers
 
             return SuccessResponse(result, "Product fetched successfully");
         }
-            
 
 
+        [Authorize(Roles ="Admin")]
         [HttpPost]
      
         public IActionResult Add(ProductDto dto)
@@ -52,7 +52,7 @@ namespace InventoryManagementAPI.Controllers
             {
                 return ErrorResponse("Invalid data");
             }
-                
+                    
             var product = _mapper.Map<Product>(dto);
 
             _service.AddProduct(product);
@@ -62,7 +62,7 @@ namespace InventoryManagementAPI.Controllers
             return SuccessResponse(result, "Product added successfully");
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public IActionResult Update(int id, ProductDto dto)
         {
@@ -82,7 +82,7 @@ namespace InventoryManagementAPI.Controllers
             return SuccessResponse(result, "Product updated successfully");
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -96,9 +96,9 @@ namespace InventoryManagementAPI.Controllers
             _service.DeleteProduct(id);
 
             return SuccessResponse<string>("Deleted", "Product deleted successfully");
-        }   
+        }
 
-
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {

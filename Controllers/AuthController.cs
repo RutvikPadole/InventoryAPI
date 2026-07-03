@@ -29,12 +29,14 @@ public class AuthController : ControllerBase
     public IActionResult Login(LoginRequest request)
     {
         var user = _context.Users
-            .FirstOrDefault(x => x.Username == request.Username && x.Password == request.Password);
+            .FirstOrDefault(x => x.Username == request.Username);
 
-        if (user == null)
+        if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.Password))
         {
+
             return Unauthorized("Invalid credentials");
         }
+
 
         var claims = new[]
         {
@@ -43,35 +45,31 @@ public class AuthController : ControllerBase
         };
 
         var key = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(_config["Jwt:Key"])
-        );
-
-        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            Encoding.UTF8.GetBytes("THIS_IS_MY_SECRET_KEY_12345"));
 
         var token = new JwtSecurityToken(
-            issuer: _config["Jwt:Issuer"],
-            audience: _config["Jwt:Audience"],
-            claims: claims,
-            expires: DateTime.Now.AddMinutes(30),
-            signingCredentials: creds
-        );
+       issuer: "MyApp",
+       audience: "MyAppUsers",
+       claims: claims,
+       expires: DateTime.Now.AddHours(1),
+       signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
+   );
 
-        var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+        string jwt = new JwtSecurityTokenHandler().WriteToken(token);
 
         return Ok(new { token = jwt });
     }
 
 
     [HttpPost ("register")]
-    public IActionResult Register(RegisterRequest request)
+    public IActionResult Register([FromBody]RegisterRequest request)
     {
-        var user = _context.Users
+        var existingUser = _context.Users
             .FirstOrDefault(x => x.Username == request.Username);
 
-        if(user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.Password))
+        if (existingUser != null)
         {
-
-            return Unauthorized("Invalid credentials");
+            return BadRequest("User already exists");
         }
 
         // this is hash password 
@@ -85,9 +83,12 @@ public class AuthController : ControllerBase
             Role = request.Role
         };
 
-        _context.Users.Add(user);
+        _context.Users.Add(User);
         _context.SaveChanges();
 
         return Ok("User register successfully");
     }
+
+   
+
 }
