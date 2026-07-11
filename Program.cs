@@ -16,7 +16,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var key = Encoding.UTF8.GetBytes("THIS_IS_MY_SECRET_KEY_12345");
+var key = Encoding.UTF8.GetBytes("THIS_IS_MY_SECRET_KEY_12345_ABCDEFG");
 
 builder.Services.AddAuthentication(options =>
 {
