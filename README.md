@@ -1,85 +1,75 @@
-﻿# 🛒 Inventory Management API (Product REST API)
+﻿Inventory Management API (Product REST API)
 
-## 📌 Project Overview
-This project is a RESTful Backend API developed using ASP.NET Core Web API (.NET 10).  
-It provides complete CRUD operations for Products along with secure authentication using JWT and Refresh Token strategy.
+A scalable and maintainable RESTful Backend API built using .NET 10 and ASP.NET Core Web API. 
+This project is designed following clean architecture principles and industry best practices.
 
-The application follows a clean and scalable architecture, making it easy to maintain and extend.
+Project Overview
 
----
-
-## 🚀 Features
-
-- ✅ Product CRUD Operations (Create, Read, Update, Delete)
-- 🔐 JWT Authentication & Authorization
-- 🔁 Refresh Token Implementation
-- 👥 Role-Based Access Control (Admin/User)
-- 📦 Clean Architecture (API, Application, Domain, Infrastructure)
-- 📘 Swagger API Documentation
-- ✔️ Data Validation using FluentValidation
+This API provides complete CRUD operations for Product and Item entities, along with authentication, validation, and structured architecture.
+The goal of this project is to demonstrate:
+1. Clean code practices
+2. Scalable architecture
+3. Real-world backend development skills
 
 
-## 🛠 Tech Stack
+Features
 
-- ASP.NET Core Web API
-- Entity Framework Core
-- SQL Server
-- AutoMapper
-- FluentValidation
-- JWT Authentication
-
-## 📁 Project Structure
-
-InventoryManagementAPI/
-│
-├── src/
-│ ├── API/
-│ │ ├── Controllers/
-│ │ ├── Middleware/
-│ │
-│ ├── Application/
-│ │ ├── Services/
-│ │ ├── Validators/
-│ │
-│ ├── Infrastructure/
-│ │ ├── Data/
-│ │ ├── Repositories/
-│
-├── Program.cs
-├── appsettings.json
-├── README.md
+1. Product CRUD Operations (Create, Read, Update, Delete)
+2. JWT Authentication & Authorization
+3. Refresh Token Implementation
+4. Role-Based Access Control (Admin/User)
+5. Clean Architecture (API, Application, Domain, Infrastructure)
+6. Swagger API Documentation
+7. Data Validation using FluentValidation
+8. Global Exception Handling Middleware
+9. Async/Await for better performance
 
 
-## ▶️ How to Run Project
+Tech Stack
 
-### 🔹 Step 1: Clone Repository
+Framework: .NET 8
+API: ASP.NET Core Web API
+Database: SQL Server + Entity Framework Core
+Authentication: JWT (Access Token + Refresh Token)
+Validation: FluentValidation
+Testing: xUnit
+Documentation: Swagger 
+Logging: Built-in logging 
 
-```bash
-git clone https://github.com/your-username/inventory-api.git
-cd inventory-api
 
-🔹 Step 2: Run Project
+Project Structure
+
+Solution/
+├── API/            → Controllers, Middleware, Config
+├── Application/    → Services, DTOs, Interfaces, Validators
+├── Domain/         → Entities, Enums, Exceptions
+├── Infrastructure/ → DbContext, Repositories, Identity
+├── Tests/          → Unit & Integration Tests
+
+
+Authentication Flow
+
+1. User logs in → receives JWT Access Token
+2. Access Token used for API requests
+3. Refresh Token used to generate new Access Token
+4. Role-based authorization applied to secure endpoints
+
+
+ How to Run Project
+
+Step 1: Clone Repository
+
+
+git clone https://github.com/RutvikPadole/InventoryAPI.git
+
+cd InventoryAPI
+
+
+Step 2: Run Project
 
 dotnet run
 
-🔹 Step 3: Open Swagger
+Step 3: Open Swagger
 
 https://localhost:5118
 
-🔐 Authentication
-
-Login API
-
-POST /api/auth/login
-
-Request Body
-{
-  "username": "admin",
-  "password": "123"
-}
-
-
-Response
-{
-  "token": "your-jwt-token"
-}
