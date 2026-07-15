@@ -27,8 +27,8 @@ Features :-
 
 Tech Stack :-
 
-Framework: .NET 10
-API: ASP.NET Core Web API
+1. Framework: .NET 10
+2. API: ASP.NET Core Web API
 Database: SQL Server + Entity Framework Core
 Authentication: JWT (Access Token + Refresh Token)
 Validation: FluentValidation
