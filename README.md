@@ -3,7 +3,7 @@
 A scalable and maintainable RESTful Backend API built using .NET 10 and ASP.NET Core Web API. 
 This project is designed following clean architecture principles and industry best practices.
 
-Project Overview
+Project Overview :-
 
 This API provides complete CRUD operations for Product and Item entities, along with authentication, validation, and structured architecture.
 The goal of this project is to demonstrate:
@@ -12,7 +12,7 @@ The goal of this project is to demonstrate:
 3. Real-world backend development skills
 
 
-Features
+Features :-
 
 1. Product CRUD Operations (Create, Read, Update, Delete)
 2. JWT Authentication & Authorization
@@ -25,9 +25,9 @@ Features
 9. Async/Await for better performance
 
 
-Tech Stack
+Tech Stack :-
 
-Framework: .NET 8
+Framework: .NET 10
 API: ASP.NET Core Web API
 Database: SQL Server + Entity Framework Core
 Authentication: JWT (Access Token + Refresh Token)
@@ -37,7 +37,7 @@ Documentation: Swagger
 Logging: Built-in logging 
 
 
-Project Structure
+Project Structure :-
 
 Solution/
 ├── API/            → Controllers, Middleware, Config
@@ -47,7 +47,7 @@ Solution/
 ├── Tests/          → Unit & Integration Tests
 
 
-Authentication Flow
+Authentication Flow :-
 
 1. User logs in → receives JWT Access Token
 2. Access Token used for API requests
@@ -55,7 +55,7 @@ Authentication Flow
 4. Role-based authorization applied to secure endpoints
 
 
- How to Run Project
+ How to Run Project :-
 
 Step 1: Clone Repository
 
