@@ -29,12 +29,12 @@ Tech Stack :-
 
 1. Framework: .NET 10
 2. API: ASP.NET Core Web API
-Database: SQL Server + Entity Framework Core
-Authentication: JWT (Access Token + Refresh Token)
-Validation: FluentValidation
-Testing: xUnit
-Documentation: Swagger 
-Logging: Built-in logging 
+3. Database: SQL Server + Entity Framework Core
+4. Authentication: JWT (Access Token + Refresh Token)
+5. Validation: FluentValidation
+6. Testing: xUnit
+7. Documentation: Swagger 
+8. Logging: Built-in logging 
 
 
 Project Structure :-
