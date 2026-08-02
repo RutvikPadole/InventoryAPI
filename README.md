@@ -27,7 +27,7 @@ Features :-
 
 Tech Stack :-
 
-1. Framework: .NET 10
+1. Framework: .NET 10 
 2. API: ASP.NET Core Web API
 3. Database: SQL Server + Entity Framework Core
 4. Authentication: JWT (Access Token + Refresh Token)
@@ -35,9 +35,9 @@ Tech Stack :-
 6. Testing: xUnit
 7. Documentation: Swagger 
 8. Logging: Built-in logging 
-
-
-Project Structure :-
+Ś
+Ś
+Ś
 
 Solution/
 ├── API/            → Controllers, Middleware, Config
