@@ -24,15 +24,13 @@ namespace InventoryManagementAPI.src.API.Controllers
             _mapper = mapper;
             _logger = logger;
 
-           
             _logger.LogInformation("Product added");
         }
 
-        [Authorize]
+       [Authorize]
         [HttpGet]
         public IActionResult GetAll()
-        {
-
+        { 
             var products = _service.GetAllProducts();
 
             var result = _mapper.Map<List<ProductDto>>(products);
@@ -83,7 +81,7 @@ namespace InventoryManagementAPI.src.API.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int id) 
         {
             var product = _service.GetProductById(id);
 
