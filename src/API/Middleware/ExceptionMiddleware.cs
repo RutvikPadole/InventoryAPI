@@ -5,7 +5,7 @@ namespace InventoryManagementAPI.src.API.Middleware
 {
     public class ExceptionMiddleware
     {
-        private readonly RequestDelegate _next;
+        private readonly RequestDelegate _next; 
         private readonly ILogger<ExceptionMiddleware> _logger;
 
 
