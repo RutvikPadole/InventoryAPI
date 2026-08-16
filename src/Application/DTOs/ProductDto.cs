@@ -13,5 +13,5 @@ namespace InventoryManagementAPI.src.Application.DTOs
         public decimal Price { get; set; }
          
         
-    }x
+    }
 }
