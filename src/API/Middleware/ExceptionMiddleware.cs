@@ -13,7 +13,6 @@ namespace InventoryManagementAPI.src.API.Middleware
             _next = next;
             _logger = logger;
         }
-
         public async Task Invoke(HttpContext context)
         {
             try
@@ -21,7 +20,9 @@ namespace InventoryManagementAPI.src.API.Middleware
                 await _next(context);
 
             }
+
             catch (Exception ex)
+            
             {
                 await HandleException(context, ex);
             }
