@@ -4,6 +4,7 @@ using InventoryManagementAPI.src.Application;
 namespace InventoryManagementAPI.src.API.Controllers
 {
     [ApiController]
+
     public class BaseController : ControllerBase
     {
         protected IActionResult SuccessResponse<T> (T data, string message)
