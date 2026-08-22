@@ -11,7 +11,6 @@ namespace InventoryManagementAPI.src.Application.DTOs
 
         [Range(1,1000000,ErrorMessage ="Price must be greater than 0")]
         public decimal Price { get; set; }
-         
-        
+           
     }
 }
