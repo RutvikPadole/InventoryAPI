@@ -12,7 +12,6 @@ namespace InventoryManagementAPI.src.API.Controllers
     [Authorize]
 
     public class ProductController : BaseController
-
     {
         private readonly IProductService _service;
         private readonly IMapper _mapper;
