@@ -16,7 +16,6 @@ namespace InventoryManagementAPI.src.API.Controllers
                 Data = data
             });
         }
-
         protected IActionResult ErrorResponse(string message)
         {
             return BadRequest(new ApiResponse<string>
