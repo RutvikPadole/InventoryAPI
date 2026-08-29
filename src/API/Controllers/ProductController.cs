@@ -10,7 +10,6 @@ namespace InventoryManagementAPI.src.API.Controllers
     [ApiController]
     [Route("api/[controller]")]
     [Authorize]
-
     public class ProductController : BaseController
     {
         private readonly IProductService _service;
