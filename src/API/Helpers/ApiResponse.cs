@@ -9,12 +9,14 @@ public class ApiResponse<T>
     public T Data { get; set; }
 
     public ApiResponse() { }
+
     public ApiResponse(T data, string message = "Success")
     {
         Success = true;
         Message = message;
         Data = data;
     }
+
 
     public ApiResponse(string message)
     {
