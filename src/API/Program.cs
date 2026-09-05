@@ -22,6 +22,7 @@ builder.Services.AddAuthentication(options =>
 {
 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
 })
 .AddJwtBearer(options =>
 {
@@ -115,7 +116,6 @@ app.UseSwaggerUI(c =>
 app.UseCors("AllowAll");
 
 app.UseHttpsRedirection();
-
 
 app.UseMiddleware<RequestLoggingMiddleware>();
 
