@@ -1,7 +1,5 @@
 ﻿using InventoryManagementAPI.src.Domain.Model;
 
-
-
 public interface IProductRepository
 
     {
