@@ -10,11 +10,9 @@ namespace InventoryManagementAPI.src.Infrastructure.Data
         {
          
         }
-
         public DbSet<Product> Products { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>()
