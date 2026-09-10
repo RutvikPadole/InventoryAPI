@@ -23,6 +23,7 @@ namespace InventoryManagementAPI.src.API.Controllers
                 Success = false,
                 Message = message,
                 Data = null
+
             });
         }
     }
