@@ -26,7 +26,7 @@ namespace InventoryManagementAPI.src.API.Controllers
         }
 
        [Authorize]
-        [HttpGet]
+       [HttpGet]
         public IActionResult GetAll()
         { 
             var products = _service.GetAllProducts();
